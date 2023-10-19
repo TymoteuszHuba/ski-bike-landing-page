@@ -101,15 +101,16 @@
 						Here you can find the best bikes for your type of trail
 					</h2>
 					<select name="bikes" id="bike-select" class="bikes__select">
-						<option value="">All types of bikes</option>
+						<option value="allBikes">All types of bikes</option>
 						<option value="enduro">Enduro</option>
 						<option value="trail">Trail</option>
+						<option value="hardtail">Hardtail</option>
 						<option value="xc">XC</option>
 						<option value="electric">Electric</option>
 					</select>
 				</div>
 				<div class="bikes__cards">
-					<div class="bikes__card emtb">
+					<div class="bikes__card emtb" id="electric">
 						<div class="bikes__card-img">
 							<img
 								src="./img/FuelEXe99XTR_emtb.webp"
@@ -188,7 +189,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="bikes__card enduro-slash99">
+					<div class="bikes__card enduro-slash99" id="enduro">
 						<div class="bikes__card-img">
 							<img
 								src="./img/Slash99_enduro.webp"
@@ -267,7 +268,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="bikes__card trail">
+					<div class="bikes__card trail" id="trail">
 						<div class="bikes__card-img">
 							<img
 								src="./img/Slash7_trail.webp"
@@ -346,7 +347,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="bikes__card hardtail-roscoe7">
+					<div class="bikes__card hardtail-roscoe7" id="hardtail">
 						<div class="bikes__card-img">
 							<img
 								src="./img/Roscoe7_hardtail.webp"
@@ -425,7 +426,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="bikes__card emtb">
+					<div class="bikes__card emtb" id="electric">
 						<div class="bikes__card-img">
 							<img
 								src="./img/Rail97SLXXT_emtb.webp"
@@ -504,7 +505,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="bikes__card enduro-slash97">
+					<div class="bikes__card enduro-slash97" id="enduro">
 						<div class="bikes__card-img">
 							<img
 								src="./img/Slash97_enduro.webp"
@@ -583,7 +584,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="bikes__card trail">
+					<div class="bikes__card trail" id="trail">
 						<div class="bikes__card-img">
 							<img
 								src="./img/TopFuel99_trail.webp"
@@ -662,7 +663,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="bikes__card hardtail-procaliber97">
+					<div class="bikes__card hardtail-procaliber97" id="hardtail">
 						<div class="bikes__card-img">
 							<img
 								src="./img/Procaliber97_hardtail.webp"
@@ -741,7 +742,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="bikes__card xc">
+					<div class="bikes__card xc" id="xc">
 						<div class="bikes__card-img">
 							<img
 								src="./img/SupercaliberSLR99_XC.webp"
@@ -820,7 +821,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="bikes__card xc">
+					<div class="bikes__card xc" id="xc">
 						<div class="bikes__card-img">
 							<img
 								src="./img/Supercaliber97NX_XC.webp"
@@ -899,7 +900,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="bikes__card xc">
+					<div class="bikes__card xc" id="xc">
 						<div class="bikes__card-img">
 							<img
 								src="./img/Supercaliber97NX_XC.webp"
@@ -978,7 +979,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="bikes__card xc">
+					<div class="bikes__card xc" id="xc">
 						<div class="bikes__card-img">
 							<img
 								src="./img/Supercaliber97NX_XC.webp"

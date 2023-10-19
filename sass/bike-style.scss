@@ -263,7 +263,7 @@ body {
 .bikes {
 	position: relative;
 	// overflow: hidden;
-	height: 1500px;
+	height: 90vh;
 	overflow: hidden;
 
 	&__content-box {
@@ -310,10 +310,12 @@ body {
 		flex-direction: column;
 		border-bottom: 1px solid var(--white);
 		border-right: 1px solid var(--white);
+		
 
 		&-img {
 			align-self: center;
 			overflow: hidden;
+			pointer-events: none;
 
 			img {
 				width: 100%;
@@ -326,6 +328,7 @@ body {
 			// display: flex;
 			// flex-direction: column;
 			padding: 1em 0 2em 0;
+			pointer-events: none;
 
 			&-name {
 				padding: 1em 0;
