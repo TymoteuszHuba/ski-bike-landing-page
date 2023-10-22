@@ -310,7 +310,6 @@ body {
 		flex-direction: column;
 		border-bottom: 1px solid var(--white);
 		border-right: 1px solid var(--white);
-		
 
 		&-img {
 			align-self: center;
@@ -362,6 +361,7 @@ body {
 				width: 1em;
 				height: 1em;
 				border: 1px solid var(--gray);
+				// transition: background-color 0.7s ease;
 			}
 		}
 	}
@@ -375,67 +375,72 @@ body {
 		}
 	}
 
-	.emtb:hover {
-		.bikes__card-spec-square:nth-child(-n + 10) {
-			background-color: var(--light-green);
-			border-color: var(--light-green);
-		}
+	.card__hover-effects {
+		background-color: var(--light-green);
+		border-color: var(--light-green);
 	}
 
-	.enduro-slash99:hover {
-		.mountain-square:nth-child(-n + 9),
-		.hill-square:nth-child(-n + 8),
-		.forest-square:nth-child(-n + 7),
-		.city-square:nth-child(-n + 3) {
-			background-color: var(--light-green);
-			border-color: var(--light-green);
-		}
-	}
-	.enduro-slash97:hover {
-		.mountain-square:nth-child(-n + 8),
-		.hill-square:nth-child(-n + 8),
-		.forest-square:nth-child(-n + 7),
-		.city-square:nth-child(-n + 3) {
-			background-color: var(--light-green);
-			border-color: var(--light-green);
-		}
-	}
-	.trail:hover {
-		.mountain-square:nth-child(-n + 7),
-		.hill-square:nth-child(-n + 8),
-		.forest-square:nth-child(-n + 7),
-		.city-square:nth-child(-n + 3) {
-			background-color: var(--light-green);
-			border-color: var(--light-green);
-		}
-	}
-	.hardtail-roscoe7:hover {
-		.mountain-square:nth-child(-n + 5),
-		.hill-square:nth-child(-n + 5),
-		.forest-square:nth-child(-n + 6),
-		.city-square:nth-child(-n + 5) {
-			background-color: var(--light-green);
-			border-color: var(--light-green);
-		}
-	}
-	.hardtail-procaliber97:hover {
-		.mountain-square:nth-child(-n + 5),
-		.hill-square:nth-child(-n + 6),
-		.forest-square:nth-child(-n + 7),
-		.city-square:nth-child(-n + 5) {
-			background-color: var(--light-green);
-			border-color: var(--light-green);
-		}
-	}
-	.xc:hover {
-		.mountain-square:nth-child(-n + 4),
-		.hill-square:nth-child(-n + 8),
-		.forest-square:nth-child(-n + 7),
-		.city-square:nth-child(-n + 4) {
-			background-color: var(--light-green);
-			border-color: var(--light-green);
-		}
-	}
+	// .emtb:hover {
+	// 	.bikes__card-spec-square:nth-child(-n + 10) {
+	// 		background-color: var(--light-green);
+	// 		border-color: var(--light-green);
+	// 	}
+	// }
+
+	// .enduro-slash99:hover {
+	// 	.mountain-square:nth-child(-n + 9),
+	// 	.hill-square:nth-child(-n + 8),
+	// 	.forest-square:nth-child(-n + 7),
+	// 	.city-square:nth-child(-n + 3) {
+	// 		background-color: var(--light-green);
+	// 		border-color: var(--light-green);
+	// 	}
+	// }
+	// .enduro-slash97:hover {
+	// 	.mountain-square:nth-child(-n + 8),
+	// 	.hill-square:nth-child(-n + 8),
+	// 	.forest-square:nth-child(-n + 7),
+	// 	.city-square:nth-child(-n + 3) {
+	// 		background-color: var(--light-green);
+	// 		border-color: var(--light-green);
+	// 	}
+	// }
+	// .trail:hover {
+	// 	.mountain-square:nth-child(-n + 7),
+	// 	.hill-square:nth-child(-n + 8),
+	// 	.forest-square:nth-child(-n + 7),
+	// 	.city-square:nth-child(-n + 3) {
+	// 		background-color: var(--light-green);
+	// 		border-color: var(--light-green);
+	// 	}
+	// }
+	// .hardtail-roscoe7:hover {
+	// 	.mountain-square:nth-child(-n + 5),
+	// 	.hill-square:nth-child(-n + 5),
+	// 	.forest-square:nth-child(-n + 6),
+	// 	.city-square:nth-child(-n + 5) {
+	// 		background-color: var(--light-green);
+	// 		border-color: var(--light-green);
+	// 	}
+	// }
+	// .hardtail-procaliber97:hover {
+	// 	.mountain-square:nth-child(-n + 5),
+	// 	.hill-square:nth-child(-n + 6),
+	// 	.forest-square:nth-child(-n + 7),
+	// 	.city-square:nth-child(-n + 5) {
+	// 		background-color: var(--light-green);
+	// 		border-color: var(--light-green);
+	// 	}
+	// // }
+	// .xc:hover {
+	// 	.mountain-square:nth-child(-n + 4),
+	// 	.hill-square:nth-child(-n + 8),
+	// 	.forest-square:nth-child(-n + 7),
+	// 	.city-square:nth-child(-n + 4) {
+	// 		background-color: var(--light-green);
+	// 		border-color: var(--light-green);
+	// 	}
+	// }
 
 	.show-btn {
 		position: absolute;

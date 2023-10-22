@@ -324,49 +324,7 @@ body {
 .bikes__card:hover img {
   transform: scale(1.3);
 }
-.bikes .emtb:hover .bikes__card-spec-square:nth-child(-n+10) {
-  background-color: var(--light-green);
-  border-color: var(--light-green);
-}
-.bikes .enduro-slash99:hover .mountain-square:nth-child(-n+9),
-.bikes .enduro-slash99:hover .hill-square:nth-child(-n+8),
-.bikes .enduro-slash99:hover .forest-square:nth-child(-n+7),
-.bikes .enduro-slash99:hover .city-square:nth-child(-n+3) {
-  background-color: var(--light-green);
-  border-color: var(--light-green);
-}
-.bikes .enduro-slash97:hover .mountain-square:nth-child(-n+8),
-.bikes .enduro-slash97:hover .hill-square:nth-child(-n+8),
-.bikes .enduro-slash97:hover .forest-square:nth-child(-n+7),
-.bikes .enduro-slash97:hover .city-square:nth-child(-n+3) {
-  background-color: var(--light-green);
-  border-color: var(--light-green);
-}
-.bikes .trail:hover .mountain-square:nth-child(-n+7),
-.bikes .trail:hover .hill-square:nth-child(-n+8),
-.bikes .trail:hover .forest-square:nth-child(-n+7),
-.bikes .trail:hover .city-square:nth-child(-n+3) {
-  background-color: var(--light-green);
-  border-color: var(--light-green);
-}
-.bikes .hardtail-roscoe7:hover .mountain-square:nth-child(-n+5),
-.bikes .hardtail-roscoe7:hover .hill-square:nth-child(-n+5),
-.bikes .hardtail-roscoe7:hover .forest-square:nth-child(-n+6),
-.bikes .hardtail-roscoe7:hover .city-square:nth-child(-n+5) {
-  background-color: var(--light-green);
-  border-color: var(--light-green);
-}
-.bikes .hardtail-procaliber97:hover .mountain-square:nth-child(-n+5),
-.bikes .hardtail-procaliber97:hover .hill-square:nth-child(-n+6),
-.bikes .hardtail-procaliber97:hover .forest-square:nth-child(-n+7),
-.bikes .hardtail-procaliber97:hover .city-square:nth-child(-n+5) {
-  background-color: var(--light-green);
-  border-color: var(--light-green);
-}
-.bikes .xc:hover .mountain-square:nth-child(-n+4),
-.bikes .xc:hover .hill-square:nth-child(-n+8),
-.bikes .xc:hover .forest-square:nth-child(-n+7),
-.bikes .xc:hover .city-square:nth-child(-n+4) {
+.bikes .card__hover-effects {
   background-color: var(--light-green);
   border-color: var(--light-green);
 }
