@@ -4,9 +4,81 @@ const sectionBikes = document.querySelector('.bikes');
 const selectBikes = document.querySelector('.bikes__select');
 const bikeCards = document.querySelector('.bikes__cards');
 const cards = document.querySelectorAll('.bikes__card');
-
 // object which contain all mouseover parameters of card
 const bikeData = {};
+
+const cardData = {
+	'Trek Fuel EXe 9.9 XTR': {
+		type: 'electric',
+		mountain: 10,
+		hill: 10,
+		forest: 10,
+		city: 9,
+	},
+	'Trek Slash 9.9 XXT': {
+		type: 'enduro',
+		mountain: 9,
+		hill: 8,
+		forest: 6,
+		city: 3,
+	},
+	'Trek Slash 7': {
+		type: 'trail',
+		mountain: 7,
+		hill: 8,
+		forest: 7,
+		city: 4,
+	},
+	'Trek Roscoe 7': {
+		type: 'hardtail',
+		mountain: 5,
+		hill: 5,
+		forest: 6,
+		city: 5,
+	},
+	'Trek Rail 9.7': {
+		type: 'electric',
+		mountain: 9,
+		hill: 9,
+		forest: 9,
+		city: 9,
+	},
+	'Trek Slash 9.7': {
+		type: 'enduro',
+		mountain: 8,
+		hill: 7,
+		forest: 6,
+		city: 3,
+	},
+	'Trek Top Fuel 9.9': {
+		type: 'trail',
+		mountain: 7,
+		hill: 8,
+		forest: 7,
+		city: 4,
+	},
+	'Trek Procaliber 9.7': {
+		type: 'hardtail',
+		mountain: 5,
+		hill: 6,
+		forest: 7,
+		city: 5,
+	},
+	'Trek Supercaliber SLR 9.9': {
+		type: 'xc',
+		mountain: 5,
+		hill: 8,
+		forest: 8,
+		city: 5,
+	},
+	'Trek Supercaliber 9.7': {
+		type: 'xc',
+		mountain: 5,
+		hill: 7,
+		forest: 7,
+		city: 5,
+	},
+};
 
 // show more bikes (showbar)
 showBtn.addEventListener('click', () => {
@@ -47,133 +119,46 @@ const addCardsToBikeData = (card) => {
 	console.log('bikeData: ', bikeData);
 };
 
-// function which show squares
-const showSquares = (cardName, card) => {
-	let mountainSquare = card.querySelectorAll('.mountain-square');
-	let hillSquare = card.querySelectorAll('.hill-square');
-	let forestSquare = card.querySelectorAll('.forest-square');
-	let citySquare = card.querySelectorAll('.city-square');
+// function which updates squares based on bike spec from object cardData
+const updateSpecificationSquares = (card, bikeName) => {
+	// object cardData[bikeName] (bikeName as key) pass all elements to specification, which is new object contains all spec from type of bike
+	const specification = cardData[bikeName];
 
-	if (cardName === 'Trek Fuel EXe 9.9 XTR') {
-		for (let i = 0; i <= 9; i++) {
-			mountainSquare[i].classList.add('card__hover-effects');
-			hillSquare[i].classList.add('card__hover-effects');
-			forestSquare[i].classList.add('card__hover-effects');
+	// for each specType in specification
+	for (const specType in specification) {
+		// new variable squares which contains all square from card
+		// specType is like a name for class
+		const squares = card.querySelectorAll(`.${specType}-square`);
+		// numSquares contains all keys of object specification[specType] (specType is key)
+		const numSquares = specification[specType];
+
+		// if statement check if squares length is bigger or the same like numSquares
+		if (squares.length >= numSquares) {
+			// for loop which check i value is bigger than numSquares if yes then iteration i++
+			for (let i = 0; i < numSquares; i++) {
+				// add card__hover-effects for each square
+				squares[i].classList.add('squares--color');
+			}
 		}
-		for (let i = 0; i <= 8; i++) {
-			citySquare[i].classList.add('card__hover-effects');
-		}
-	} else if (cardName === 'Trek Rail 9.7') {
-		for (let i = 0; i <= 8; i++) {
-			mountainSquare[i].classList.add('card__hover-effects');
-			hillSquare[i].classList.add('card__hover-effects');
-			forestSquare[i].classList.add('card__hover-effects');
-			citySquare[i].classList.add('card__hover-effects');
-		}
-	} else if (cardName === 'Trek Slash 9.9 XXT') {
-        for (let i = 0; i <= 8; i++) {
-			mountainSquare[i].classList.add('card__hover-effects');
-		}
-        for (let i = 0; i <= 7; i++) {
-            hillSquare[i].classList.add('card__hover-effects');
-        }
-        for (let i = 0; i <= 5; i++) {
-            forestSquare[i].classList.add('card__hover-effects');
-        }
-        for (let i = 0; i <= 2; i++) {
-            citySquare[i].classList.add('card__hover-effects');
-        }
-    } else if (cardName === 'Trek Slash 9.7') {
-        for (let i = 0; i <= 7; i++) {
-			mountainSquare[i].classList.add('card__hover-effects');
-		}
-        for (let i = 0; i <= 6; i++) {
-            hillSquare[i].classList.add('card__hover-effects');
-        }
-        for (let i = 0; i <= 5; i++) {
-            forestSquare[i].classList.add('card__hover-effects');
-        }
-        for (let i = 0; i <= 2; i++) {
-            citySquare[i].classList.add('card__hover-effects');
-        }
-    } else if (cardName === 'Trek Slash 7' || cardName === 'Trek Top Fuel 9.9') {
-        for (let i = 0; i <= 6; i++) {
-			mountainSquare[i].classList.add('card__hover-effects');
-		}
-        for (let i = 0; i <= 7; i++) {
-            hillSquare[i].classList.add('card__hover-effects');
-        }
-        for (let i = 0; i <= 6; i++) {
-            forestSquare[i].classList.add('card__hover-effects');
-        }
-        for (let i = 0; i <= 3; i++) {
-            citySquare[i].classList.add('card__hover-effects');
-        }
-    } else if (cardName === 'Trek Roscoe 7') {
-        for (let i = 0; i <= 4; i++) {
-			mountainSquare[i].classList.add('card__hover-effects');
-		}
-        for (let i = 0; i <= 4; i++) {
-            hillSquare[i].classList.add('card__hover-effects');
-        }
-        for (let i = 0; i <= 5; i++) {
-            forestSquare[i].classList.add('card__hover-effects');
-        }
-        for (let i = 0; i <= 4; i++) {
-            citySquare[i].classList.add('card__hover-effects');
-        }
-    } else if (cardName === 'Trek Procaliber 9.7') {
-        for (let i = 0; i <= 4; i++) {
-			mountainSquare[i].classList.add('card__hover-effects');
-		}
-        for (let i = 0; i <= 5; i++) {
-            hillSquare[i].classList.add('card__hover-effects');
-        }
-        for (let i = 0; i <= 6; i++) {
-            forestSquare[i].classList.add('card__hover-effects');
-        }
-        for (let i = 0; i <= 4; i++) {
-            citySquare[i].classList.add('card__hover-effects');
-        }
-    } else if (cardName === 'Trek Supercaliber SLR 9.9') {
-        for (let i = 0; i <= 4; i++) {
-			mountainSquare[i].classList.add('card__hover-effects');
-		}
-        for (let i = 0; i <= 7; i++) {
-            hillSquare[i].classList.add('card__hover-effects');
-        }
-        for (let i = 0; i <= 7; i++) {
-            forestSquare[i].classList.add('card__hover-effects');
-        }
-        for (let i = 0; i <= 4; i++) {
-            citySquare[i].classList.add('card__hover-effects');
-        }
-    } else if (cardName === 'Trek Supercaliber 9.7') {
-        for (let i = 0; i <= 4; i++) {
-			mountainSquare[i].classList.add('card__hover-effects');
-		}
-        for (let i = 0; i <= 6; i++) {
-            hillSquare[i].classList.add('card__hover-effects');
-        }
-        for (let i = 0; i <= 6; i++) {
-            forestSquare[i].classList.add('card__hover-effects');
-        }
-        for (let i = 0; i <= 4; i++) {
-            citySquare[i].classList.add('card__hover-effects');
-        }
-    } 
+	}
 };
 
-// add listener of each card on mouseover
-cards.forEach((card) => {
-	card.addEventListener('mouseover', (event) => {
-		console.log(event.target.children[1].childNodes[1].innerText);
-		const cardName = event.target.children[1].childNodes[1].innerText;
-		const cardId = event.target.id;
-		console.log(cardId);
-		addCardsToBikeData(card);
-		showSquares(cardName, card);
+const addClickOnCard = (card) => {
+	cards.forEach((card) => {
+		card.classList.remove('card__active');
 	});
+
+	card.classList.add('card__active');
+};
+
+// we move for each card from cards variable
+cards.forEach((card) => {
+	// variable bikeName take name from card
+	const bikeName = card.querySelector('.bikes__card-spec-name').textContent;
+	// turn on function updateSpecificationSquares
+	updateSpecificationSquares(card, bikeName);
+
+	card.addEventListener('click', () => addClickOnCard(card));
 });
 
 // listener on select which turn on the function cardSelect
