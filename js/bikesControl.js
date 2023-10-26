@@ -82,7 +82,7 @@ const cardData = {
 
 // show more bikes (showbar)
 showBtn.addEventListener('click', () => {
-	sectionBikes.classList.toggle('bikes__show');
+	sectionBikes.classList.toggle('bikes--show');
 });
 
 // function setting the cards which was selected
@@ -143,12 +143,15 @@ const updateSpecificationSquares = (card, bikeName) => {
 	}
 };
 
+// function which add effects on click on card
 const addClickOnCard = (card) => {
+	// for all cards remove effect
 	cards.forEach((card) => {
-		card.classList.remove('card__active');
+		card.classList.remove('card--active');
 	});
 
-	card.classList.add('card__active');
+	// for clicked card add effect
+	card.classList.add('card--active');
 };
 
 // we move for each card from cards variable
@@ -158,7 +161,19 @@ cards.forEach((card) => {
 	// turn on function updateSpecificationSquares
 	updateSpecificationSquares(card, bikeName);
 
-	card.addEventListener('click', () => addClickOnCard(card));
+	card.addEventListener('click', () => {
+		addCardsToBikeData(card);
+
+		if (card.classList.contains('card--active')) {
+			card.classList.remove('card--active');
+		} else {
+			if (card.classList.contains('card--active')) {
+				card.classList.remove('card--active');
+			} else {
+				addClickOnCard(card);
+			}
+		}
+	});
 });
 
 // listener on select which turn on the function cardSelect

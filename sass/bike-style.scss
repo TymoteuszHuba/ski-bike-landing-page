@@ -62,7 +62,7 @@ body {
 	}
 
 	&__burger-btn:hover,
-	.burger-btn-active {
+	.burger-btn--active {
 		.bar-first,
 		.bar-third {
 			transform: translateX(0%);
@@ -116,7 +116,7 @@ body {
 			height 0.2s ease-in-out 0.2s;
 	}
 
-	.burger-menu-active {
+	.burger-menu--active {
 		visibility: visible;
 		opacity: 1;
 	}
@@ -196,6 +196,8 @@ body {
 	}
 
 	&__content-box {
+		display: flex;
+		flex-direction: column;
 		padding: 4em 2em;
 	}
 
@@ -251,11 +253,6 @@ body {
 	// overflow: hidden;
 	height: 90vh;
 	overflow: hidden;
-
-	&__content-box {
-		display: flex;
-		flex-direction: column;
-	}
 
 	&__select {
 		width: 60%;
@@ -352,7 +349,12 @@ body {
 		}
 	}
 
-	&__card:hover, .card__active {
+	.card--show {
+		animation: fadeIn 0.8s ease-out;
+	}
+
+	&__card:hover,
+	.card--active {
 		border-color: var(--light-green);
 		cursor: pointer;
 
@@ -393,9 +395,20 @@ body {
 			text-shadow: 0px 5px 0px var(--light-green);
 		}
 	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(10px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
 }
 
-.bikes__show {
+.bikes--show {
 	height: auto;
 
 	.show-btn__icon {
@@ -408,6 +421,54 @@ body {
 
 	.show-btn__text:first-child {
 		display: none;
+	}
+}
+
+.routes {
+	position: relative;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+
+	&__content {
+		align-self: center;
+		width: 90%;
+	}
+
+	&__map-links {
+		font-size: 0.7rem;
+		a {
+			color: var(--white);
+		}
+	}
+
+	&--line-svg {
+		display: none;
+		position: absolute;
+		top: 8em;
+		left: 0;
+		width: 100%;
+		z-index: -1;
+		opacity: 0.4;
+	}
+
+	&--line-path {
+		fill: none;
+		stroke-width: 4;
+		stroke: var(--light-green);
+		// stroke-linecap: round;
+		stroke-dasharray: 1000;
+		stroke-dashoffset: 1000;
+		animation: dashAnimation 5s linear forwards;
+	}
+
+	@keyframes dashAnimation {
+		from {
+			stroke-dashoffset: 1000;
+		}
+		to {
+			stroke-dashoffset: 0;
+		}
 	}
 }
 
@@ -582,6 +643,15 @@ body {
 					height: 1em;
 				}
 			}
+		}
+	}
+
+	.routes {
+		&__content-box {
+			align-self: flex-end;
+		}
+		&--line-svg {
+			display: block;
 		}
 	}
 }
