@@ -80,11 +80,6 @@ const cardData = {
 	},
 };
 
-// show more bikes (showbar)
-showBtn.addEventListener('click', () => {
-	sectionBikes.classList.toggle('bikes--show');
-});
-
 // function setting the cards which was selected
 const cardSelect = (selectedT) => {
 	cards.forEach((card) => {
@@ -95,6 +90,11 @@ const cardSelect = (selectedT) => {
 		}
 	});
 };
+
+// show more bikes (showbar)
+showBtn.addEventListener('click', () => {
+	sectionBikes.classList.toggle('bikes--show');
+});
 
 // function responsible for catch all necessery values
 const addCardsToBikeData = (card) => {

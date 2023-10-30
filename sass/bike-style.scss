@@ -289,7 +289,7 @@ body {
 	}
 
 	&__card {
-		display: flex;
+		// display: flex;
 		flex-direction: column;
 		border-bottom: 1px solid var(--white);
 		border-right: 1px solid var(--white);
@@ -399,7 +399,7 @@ body {
 	@keyframes fadeIn {
 		from {
 			opacity: 0;
-			transform: translateY(10px);
+			transform: translateY(50px);
 		}
 		to {
 			opacity: 1;
@@ -469,6 +469,143 @@ body {
 		to {
 			stroke-dashoffset: 0;
 		}
+	}
+}
+
+.service {
+	display: flex;
+	flex-direction: column;
+
+	&__content-box {
+		align-self: flex-end;
+	}
+
+	&__carousel {
+		display: flex;
+		// flex-wrap: nowrap;
+		// flex-direction: row;
+		position: relative;
+		width: 100%;
+		overflow: auto;
+		margin: auto;
+		// transition: transform 0.3s ease-in-out;
+
+		&-card {
+			// flex: 0 0 100%;
+			display: none;
+			flex-direction: column;
+			padding: 0em 3em;
+			width: 100%;
+			// box-sizing: border-box;
+		}
+
+		&-text {
+			padding-bottom: 2em;
+			font-size: 0.9rem;
+			color: var(--light-gray);
+			font-weight: 200;
+			line-height: 1.4em;
+		}
+
+		&-img {
+			width: 100%;
+			height: 300px;
+			background-size: cover;
+			background-position: center;
+			object-fit: fill;
+		}
+		&-img-first {
+			background-image: url('../img/service/repair1.jpg');
+		}
+		&-img-second {
+			background-image: url('../img/service/repair3.jpg');
+		}
+		&-img-third {
+			background-image: url('../img/service/repair4.jpg');
+		}
+
+		&-btns {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-self: center;
+			padding: 3em;
+		}
+		&-squares {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+		}
+
+		&-square {
+			width: 20px;
+			height: 20px;
+			margin: 0 0.5em;
+			border: 1px solid var(--light-gray);
+			cursor: pointer;
+			transition:
+				background-color 0.3s ease,
+				border-color 0.3s ease;
+		}
+
+		&-square:hover {
+			background-color: var(--light-green);
+			border: 1px solid var(--light-green);
+		}
+
+		&-btn {
+			width: 50px;
+			height: 50px;
+			font-size: 2rem;
+			color: var(--white);
+			background-color: transparent;
+			border: 1px solid var(--white);
+			cursor: pointer;
+
+			.fa-chevron-left,
+			.fa-chevron-right {
+				transition: color 0.2s ease;
+			}
+
+			&:hover {
+				border-color: var(--light-green);
+				.fa-chevron-left,
+				.fa-chevron-right {
+					color: var(--light-green);
+				}
+				// .fa-chevron-left {
+				// 	text-shadow: -10px 0 0 var(--light-green);
+				// }
+				// .fa-chevron-right {
+				// 	text-shadow: 10px 0 0 var(--light-green);
+				// }
+			}
+		}
+
+		.fade {
+			animation: fade 1.2s ease-in-out;
+		}
+
+		@keyframes fade {
+			from {
+				opacity: 0.4;
+			}
+			to {
+				opacity: 1;
+			}
+		}
+	}
+	.square--active {
+		background-color: var(--light-green);
+		border: 1px solid var(--light-green);
+	}
+}
+
+.footer {
+	&--bg {
+		fill: var(--green);
+		fill-opacity: 1;
 	}
 }
 
@@ -654,6 +791,42 @@ body {
 			display: block;
 		}
 	}
+
+	.service {
+		&__content {
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+
+		&__carousel {
+			align-self: center;
+
+			&-card {
+				flex-direction: row;
+				padding: 0em 4em;
+
+				// box-sizing: border-box;
+			}
+
+			&-text {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 50%;
+				padding: 0em 4em;
+				font-size: 1rem;
+			}
+
+			&-img {
+				width: 50%;
+				// height: 300px;
+			}
+
+			&-btns {
+				padding: 4em;
+			}
+		}
+	}
 }
 
 @media (min-width: 992px) {
@@ -747,80 +920,8 @@ body {
 		}
 	}
 	.bikes {
-		&__content-box {
-			// width: 100%;
-			// flex-direction: row;
-			// justify-content: space-around;
-			// align-items: center;
-		}
-
 		&__select {
 			width: 20%;
-			// margin: 2em 0 2em 2em;
-		}
-
-		// &__cards {
-		// 	flex-direction: row;
-		// 	flex-wrap: wrap;
-		// }
-
-		&__card {
-			// display: flex;
-			// flex: 1 1 31.5%;
-			// flex-direction: column;
-			// border-bottom: 1px solid var(--white);
-			// border-right: 1px solid var(--white);
-
-			// &-img {
-			// 	align-self: center;
-			// 	overflow: hidden;
-
-			// 	img {
-			// 		width: 100%;
-			// 		height: auto;
-			// 		transition: transform 0.3s ease;
-			// 	}
-			// }
-
-			// &-spec {
-			// 	// display: flex;
-			// 	// flex-direction: column;
-			// 	padding: 1em 0 2em 0;
-
-			// 	&-name {
-			// 		padding: 1em 0;
-			// 		font-size: 1rem;
-			// 	}
-
-			// 	&-content {
-			// 		display: flex;
-			// 		flex-direction: row;
-			// 		align-items: center;
-			// 		// justify-content: space-between;
-			// 		padding-bottom: 0.5em;
-			// 		// padding: 1em 0;
-			// 	}
-
-			// 	&-icon {
-			// 		width: 15%;
-			// 		height: auto;
-			// 		font-size: 1rem;
-			// 		margin-right: 1.6em;
-			// 		text-align: center;
-			// 	}
-
-			// 	&-bar {
-			// 		display: flex;
-			// 		flex-direction: row;
-			// 		gap: 1em;
-			// 	}
-
-			// 	&-square {
-			// 		width: 1em;
-			// 		height: 1em;
-			// 		border: 1px solid var(--gray);
-			// 	}
-			// }
 		}
 	}
 }
@@ -829,6 +930,26 @@ body {
 	.section {
 		&__content-box {
 			padding: 8em 8em;
+		}
+	}
+
+	.bikes {
+		&__card {
+			max-width: 30%;
+		}
+	}
+
+	.routes {
+		&__content {
+			width: 70%;
+		}
+	}
+
+	.service {
+		&__carousel {
+			&-img {
+				height: 400px;
+			}
 		}
 	}
 }
