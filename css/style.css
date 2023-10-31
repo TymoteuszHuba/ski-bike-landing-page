@@ -1,0 +1,117 @@
+:root {
+  --black: #000;
+  --light-black: #030303;
+  --dark-gray: #212121;
+  --gray: #3c3c3c;
+  --white: #ffff;
+  --pale-green: rgb(94, 111, 90);
+  --light-green: rgb(149, 255, 42);
+  --green: rgb(108, 189, 27);
+  --light-gray: rgb(150, 149, 149);
+  --blue: rgb(82, 118, 249);
+  --red: red;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 62.5%;
+  font-family: "Mulish", sans-serif;
+  overflow: hidden;
+}
+
+.header {
+  width: auto;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../valley-90388_1920.jpg");
+  background-position: bottom;
+  text-align: center;
+}
+.header__title {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: var(--white);
+  z-index: 1;
+  pointer-events: none;
+}
+.header__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+}
+.header__bg-top, .header__bg-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 46vh;
+  background-color: var(--dark-gray);
+  text-align: center;
+  text-decoration: none;
+  opacity: 0.45;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+}
+.header__bg-top {
+  border-bottom: 1px solid var(--white);
+}
+.header__bg-bottom {
+  border-top: 1px solid var(--white);
+}
+.header .winter-icon,
+.header .summer-icon {
+  font-size: 8em;
+  visibility: hidden;
+  color: var(--white);
+}
+.header__bg-top:hover, .header__bg-bottom:hover {
+  opacity: 0.8;
+}
+.header__bg-top:hover .winter-icon, .header__bg-bottom:hover .winter-icon {
+  visibility: visible;
+}
+.header__bg-top:hover .summer-icon, .header__bg-bottom:hover .summer-icon {
+  visibility: visible;
+}
+.header__bg-top:hover {
+  background-color: var(--light-gray);
+}
+.header__bg-bottom:hover {
+  background-color: var(--pale-green);
+}
+
+@media (min-width: 768px) {
+  .header__bg {
+    flex-direction: row;
+    justify-content: space-between;
+    transform: translateX(-25%);
+  }
+  .header__bg-top, .header__bg-bottom {
+    height: 100vh;
+  }
+  .header__bg-top {
+    flex: 1 0 75%;
+    border-bottom: 1px solid transparent;
+    border-right: 1px solid var(--white);
+    clip-path: polygon(0% 0%, 100% 0%, 70% 100%, 0% 100%);
+    transform: translateX(15%);
+  }
+  .header__bg-bottom {
+    flex: 1 0 75%;
+    border-top: 1px solid transparent;
+    border-left: 1px solid var(--white);
+    clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+    transform: translateX(-15%);
+  }
+}/*# sourceMappingURL=style.css.map */
