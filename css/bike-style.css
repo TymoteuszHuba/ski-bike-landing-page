@@ -448,7 +448,7 @@ body {
 }
 .routes__cards-types {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   padding-top: 1em;
 }
@@ -470,6 +470,29 @@ body {
 .routes__cards-list li {
   padding: 0.2em 0;
   list-style-type: none;
+}
+.routes__cards-type:hover {
+  cursor: pointer;
+}
+.routes__cards-type:hover .routes__cards-list--color {
+  animation: colorChange 0.2s ease-in-out forwards;
+}
+.routes__cards-type:hover li:nth-child(1) .routes__cards-list--color {
+  animation-delay: 0.2s;
+}
+.routes__cards-type:hover li:nth-child(2) .routes__cards-list--color {
+  animation-delay: 0.3s;
+}
+.routes__cards-type:hover li:nth-child(3) .routes__cards-list--color {
+  animation-delay: 0.4s;
+}
+@keyframes colorChange {
+  from {
+    color: var(--light-gray);
+  }
+  to {
+    color: var(--light-green);
+  }
 }
 
 .service {
@@ -794,6 +817,36 @@ body {
     width: 1.2em;
     height: 1.2em;
   }
+  .routes__cards {
+    padding-top: 7em;
+  }
+  .routes__cards-title {
+    font-size: 1.8rem;
+  }
+  .routes__cards-box {
+    padding-top: 4em;
+  }
+  .routes__cards-card {
+    padding: 4em 2em;
+  }
+  .routes__cards-number {
+    font-size: 7rem;
+  }
+  .routes__cards-text {
+    font-size: 1.1rem;
+  }
+  .routes__cards-type {
+    padding: 1em;
+  }
+  .routes__cards-name {
+    font-size: 1.5rem;
+  }
+  .routes__cards-list {
+    font-size: 1rem;
+  }
+  .routes__cards-list li {
+    padding: 0.3em 0;
+  }
 }
 @media (min-width: 1200px) {
   .nav__logo {
@@ -817,7 +870,10 @@ body {
     max-width: 30%;
   }
   .routes__content {
-    width: 70%;
+    max-width: 1400px;
+  }
+  .routes__cards-title {
+    font-size: 2.1rem;
   }
   .service__carousel-img {
     height: 400px;
