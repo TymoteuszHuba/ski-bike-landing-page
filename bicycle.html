@@ -32,19 +32,19 @@
 			</div>
 
 			<div class="nav__items">
-				<a href="#" class="nav__item">
+				<a href="#about-us" class="nav__item">
 					<p class="nav__item-text">About us</p>
 				</a>
-				<a href="#" class="nav__item">
+				<a href="#bikes" class="nav__item">
 					<p class="nav__item-text">Bikes</p>
 				</a>
-				<a href="#" class="nav__item">
+				<a href="#routes" class="nav__item">
 					<p class="nav__item-text">Routes</p>
 				</a>
-				<a href="#" class="nav__item">
+				<a href="#service" class="nav__item">
 					<p class="nav__item-text">Service</p>
 				</a>
-				<a href="#" class="nav__item">
+				<a href="#contact" class="nav__item">
 					<p class="nav__item-text">Contact</p>
 				</a>
 			</div>
@@ -55,7 +55,7 @@
 		</div>
 
 		<main>
-			<section class="about-us section">
+			<section class="about-us section" id="about-us">
 				<div class="section__title-box">
 					<h1 class="section__title">About us</h1>
 				</div>
@@ -92,7 +92,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="bikes section">
+			<section class="bikes section" id="bikes">
 				<div class="section__title-box">
 					<h1 class="section__title">Best Bikes</h1>
 				</div>
@@ -1065,7 +1065,7 @@
 					<p class="show-btn__text">Show less</p>
 				</button>
 			</section>
-			<section class="routes section">
+			<section class="routes section" id="routes">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					version="1.1"
@@ -1293,7 +1293,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="service section">
+			<section class="service section" id="service">
 				<div class="section__title-box">
 					<h1 class="section__title">Service</h1>
 				</div>
@@ -1348,6 +1348,82 @@
 						>
 							<i class="fa-solid fa-chevron-right"></i>
 						</button>
+					</div>
+				</div>
+			</section>
+			<section class="contact section" id="contact">
+				<div class="section__title-box">
+					<h1 class="section__title">Contact</h1>
+				</div>
+				<div class="section__content-box contact__content-box">
+					<h2 class="section__content-title">
+						If you have any questions, you can catch us by phone, email or visit us in our
+						office!
+					</h2>
+				</div>
+				<div class="contact__content">
+					<form action="" class="contact__form">
+						<legend class="contact__form-legend">
+							Contact with <span class="contact__form-legend--color">us</span>
+						</legend>
+						<!-- <label class="contact__form-label" for="fname">Name</label> -->
+						<input
+							class="contact__form-input"
+							type="text"
+							id="fname"
+							name="firstName"
+							placeholder="Your name"
+						/>
+
+						<!-- <label class="contact__form-label" for="email">Email</label> -->
+						<input
+							class="contact__form-input"
+							type="email"
+							id="email"
+							name="email"
+							placeholder="You email"
+						/>
+
+						<!-- <label class="contact__form-label" for="bikeType">Bike type:</label> -->
+						<select class="contact__form-select" name="bikeType" id="bikeType">
+							<option value="">Select bike</option>
+							<option value="enduro">Enduro</option>
+							<option value="trail">Trail</option>
+							<option value="hardtail">Hardtail</option>
+							<option value="xc">XC</option>
+							<option value="electric">Electric</option>
+						</select>
+
+						<!-- <label class="contact__form-label" for="subject">Subject</label> -->
+						<textarea
+							class="contact__form-textarea"
+							name="subject"
+							id="subject"
+							placeholder="Your subject"
+							rows = "4"
+						></textarea>
+
+						<button class="contact__form-btn" type="submit">Send</button>
+					</form>
+					<div class="contact__links">
+						<a href="" class="contact__link">
+							<div class="contact__link-icon">
+								<i class="fa-solid fa-phone"></i>
+							</div>
+							<p class="contact__link-text">+48 888 888 888</p>
+						</a>
+						<a href="" class="contact__link">
+							<div class="contact__link-icon">
+								<i class="fa-solid fa-paper-plane"></i>
+							</div>
+							<p class="contact__link-text">email@gmail.com</p>
+						</a>
+						<a href="" class="contact__link">
+							<div class="contact__link-icon">
+								<i class="fa-solid fa-location-dot"></i>
+							</div>
+							<p class="contact__link-text">00-000 Warsaw, st. Wall street 12a</p>
+						</a>
 					</div>
 				</div>
 			</section>
