@@ -21,7 +21,7 @@
 	<body>
 		<nav class="nav">
 			<div class="nav__menu">
-				<a href="" class="nav__logo">
+				<a href="#" class="nav__logo">
 					<i class="fa-solid fa-mountain-sun"></i>
 				</a>
 				<button class="nav__burger-btn">
@@ -1400,7 +1400,7 @@
 							name="subject"
 							id="subject"
 							placeholder="Your subject"
-							rows = "4"
+							rows="4"
 						></textarea>
 
 						<button class="contact__form-btn" type="submit">Send</button>
@@ -1515,17 +1515,37 @@
 			</section>
 		</main>
 		<footer class="footer">
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-				<path
-					class="footer--bg"
-					d="M0,128L205.7,64L411.4,160L617.1,288L822.9,64L1028.6,224L1234.3,160L1440,160L1440,320L1234.3,320L1028.6,320L822.9,320L617.1,320L411.4,320L205.7,320L0,320Z"
-				></path>
-			</svg>
+			<div class="footer__bg"></div>
+			<div class="footer__content">
+				<div class="footer__container">
+					<div class="footer__website">
+						<div class="footer__brand">
+							<i class="fa-solid fa-mountain-sun"></i>
+							<p class="footer__title">Mountain Park</p>
+						</div>
+						<a href="bikes.html" class="footer__link">Bikes Season</a>
+						<a href="bikes.html" class="footer__link">Ski Season</a>
+						<a href="bikes.html" class="footer__link">Service</a>
+					</div>
+					<p class="footer__creator">
+						created by
+						<a
+							href="https://github.com/TymoteuszHuba/ski-bike-landing-page"
+							class="footer__creator-link"
+							>TH</a
+						>
+					</p>
+				</div>
+				<p class="footer__text">
+					All rights reserved ©<span class="footer__year"></span>
+				</p>
+			</div>
 		</footer>
 
-		<script src="./js/burgerControl.js"></script>
+		<script src="./js/navControl.js"></script>
 		<script src="./js/bikesControl.js"></script>
 		<script src="./js/trailforksMap.js"></script>
 		<script src="./js/serviceControl.js"></script>
+		<script src="./js/footerSetup.js"></script>
 	</body>
 </html>

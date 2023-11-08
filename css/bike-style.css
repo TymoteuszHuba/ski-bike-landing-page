@@ -400,7 +400,6 @@ body {
   stroke: var(--light-green);
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
-  animation: dashAnimation 5s linear forwards;
 }
 @keyframes dashAnimation {
   from {
@@ -751,16 +750,82 @@ body {
   transform: scale(1.2);
 }
 
-.footer--bg {
-  fill: var(--green);
-  fill-opacity: 1;
+.footer {
+  position: relative;
+  width: 100%;
+  padding-top: 2em;
+}
+.footer__bg {
+  width: 100%;
+  height: 0;
+  padding: 0;
+  padding-bottom: 92%;
+  padding-bottom: 50%; /* zmiana na 4 przy 576px*/
+  background-image: url("../footer__mountains.svg");
+  background-size: cover;
+}
+.footer__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  max-width: 1400px;
+  padding: 7em 0 1.5em 0;
+  color: var(--black);
+  transform: translate(-50%, -50%);
+}
+.footer__container {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
+}
+.footer__brand {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.footer__brand .fa-mountain-sun {
+  font-size: 1.2rem;
+}
+.footer__link {
+  display: none;
+  padding: 0.5em;
+}
+.footer__title {
+  margin-left: 1em;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.footer__creator {
+  color: var(--gray);
+  font-size: 0.8rem;
+}
+.footer__creator-link {
+  font-weight: bold;
+  font-style: italic;
+  text-decoration: none;
+}
+.footer__text, .footer__year {
+  font-size: 0.9rem;
 }
 
 @media (hover: hover) {
   .nav__logo:hover {
     color: var(--light-green);
   }
-  .nav__item:hover::after {
+  .nav__item:hover::after,
+.nav .nav--active::after {
     transform: translateX(0%);
     height: 50%;
   }
@@ -779,6 +844,14 @@ body {
   }
   .contact__link-icon {
     box-shadow: 5px 5px 0 0 var(--light-green);
+  }
+}
+@media (min-width: 500px) {
+  .footer__content {
+    padding: 6em 0 1.5em 0;
+  }
+  .footer__bg {
+    padding-bottom: 25%; /* zmiana na 4 przy 576px*/
   }
 }
 @media (min-width: 576px) {
@@ -805,6 +878,9 @@ body {
     width: 1.2em;
     height: 1.2em;
     border: 1px solid var(--gray);
+  }
+  .footer__content {
+    padding: 7em 0 1.5em 0;
   }
 }
 @media (min-width: 768px) {
@@ -912,6 +988,22 @@ body {
   .contact__link {
     padding: 3em 1em;
   }
+  .footer__content {
+    padding: 7em 4em 1.5em 4em;
+  }
+  .footer__container {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .footer__brand {
+    align-self: flex-start;
+  }
+  .footer__brand .fa-mountain-sun {
+    font-size: 1.4rem;
+  }
+  .footer__link {
+    display: block;
+  }
 }
 @media (min-width: 992px) {
   .nav {
@@ -954,13 +1046,13 @@ body {
   .nav__item::after {
     top: 0;
     width: 85%;
-    height: 70%;
+    height: 50%;
     transform: translateY(-120%);
     transition: transform 0.2s ease-in-out;
   }
   .nav__item:hover::after {
     transform: translateY(0%);
-    height: 70%;
+    height: 50%;
   }
   .bikes__card-spec-name {
     font-size: 1.6rem;
@@ -1078,5 +1170,8 @@ body {
     font-size: 1.3rem;
     width: 200px;
     margin-left: 6em;
+  }
+  .footer__bg {
+    padding-bottom: 20%; /* zmiana na 4 przy 576px*/
   }
 }/*# sourceMappingURL=bike-style.css.map */
