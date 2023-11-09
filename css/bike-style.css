@@ -207,15 +207,7 @@ body {
   line-height: 1.5em;
 }
 
-.about-us__socials-box {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.about-us__socials-text {
-  font-size: 0.7rem;
-}
-.about-us__social {
+.social-box {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -223,12 +215,27 @@ body {
   height: 3em;
   margin: 0 1em;
   text-align: center;
+}
+
+.social-link {
+  padding: 0.2em 0.5em;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.about-us__social {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.about-us__social-text {
+  font-size: 0.7rem;
+}
+.about-us .social-box {
   border: 1px solid var(--white);
   transition: box-shadow 0.2s ease-in-out;
 }
-.about-us__social-link {
-  font-size: 1.2rem;
-  text-decoration: none;
+.about-us .social-link {
   color: var(--white);
 }
 
@@ -773,7 +780,6 @@ body {
   align-items: center;
   height: 100%;
   width: 100%;
-  max-width: 1400px;
   padding: 7em 0 1.5em 0;
   color: var(--black);
   transform: translate(-50%, -50%);
@@ -791,13 +797,18 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding-bottom: 0.5em;
 }
 .footer__brand .fa-mountain-sun {
   font-size: 1.2rem;
 }
 .footer__link {
   display: none;
+  width: 120px;
   padding: 0.5em;
+}
+.footer__link:hover {
+  color: var(--gray);
 }
 .footer__title {
   margin-left: 1em;
@@ -808,16 +819,33 @@ body {
   text-transform: uppercase;
 }
 .footer__creator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer__creator-socials {
+  display: none;
+  flex-direction: row;
+  padding-bottom: 2em;
+}
+.footer__creator-text {
   color: var(--gray);
   font-size: 0.8rem;
 }
 .footer__creator-link {
+  color: var(--black);
   font-weight: bold;
   font-style: italic;
   text-decoration: none;
 }
 .footer__text, .footer__year {
   font-size: 0.9rem;
+}
+.footer .social-box {
+  border: 2px solid var(--black);
+}
+.footer .social-link {
+  color: var(--black);
 }
 
 @media (hover: hover) {
@@ -829,13 +857,20 @@ body {
     transform: translateX(0%);
     height: 50%;
   }
-  .about-us__social:hover {
+  .about-us .social-box:hover {
     box-shadow: 6px 6px 0px 0px var(--light-green);
     cursor: pointer;
   }
   .contact__link:hover .contact__link-icon {
     box-shadow: 5px 5px 0 0 var(--light-green);
     border-color: var(--light-green);
+  }
+  .footer .social-box:hover {
+    border: 2px solid var(--pale-green);
+    cursor: pointer;
+  }
+  .footer .social-box:hover .social-link {
+    color: var(--pale-green);
   }
 }
 @media (hover: none) {
@@ -916,7 +951,7 @@ body {
   .about-us {
     flex-direction: row;
   }
-  .about-us__socials-text {
+  .about-us__social-text {
     font-size: 1rem;
   }
   .bikes__content-box {
@@ -988,9 +1023,6 @@ body {
   .contact__link {
     padding: 3em 1em;
   }
-  .footer__content {
-    padding: 7em 4em 1.5em 4em;
-  }
   .footer__container {
     flex-direction: row;
     justify-content: space-around;
@@ -1003,6 +1035,19 @@ body {
   }
   .footer__link {
     display: block;
+    color: var(--black);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .footer__creator-socials {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 2em;
+  }
+  .footer__creator-text {
+    font-size: 0.9rem;
   }
 }
 @media (min-width: 992px) {
@@ -1129,6 +1174,16 @@ body {
   }
   .bikes__select {
     width: 20%;
+  }
+  .footer__brand {
+    padding-bottom: 2em;
+  }
+  .footer__title {
+    font-size: 1.6rem;
+  }
+  .footer__link {
+    width: 180px;
+    font-size: 1rem;
   }
 }
 @media (min-width: 1400px) {

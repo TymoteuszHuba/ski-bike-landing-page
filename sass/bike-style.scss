@@ -222,32 +222,39 @@ body {
 	}
 }
 
+.social-box {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 3em;
+	height: 3em;
+	margin: 0 1em;
+	text-align: center;
+}
+
+.social-link {
+	padding: 0.2em 0.5em;
+	font-size: 1.2rem;
+	text-decoration: none;
+}
+
 .about-us {
-	&__socials-box {
+	&__social {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
+
+		&-text {
+			font-size: 0.7rem;
+		}
 	}
 
-	&__socials-text {
-		font-size: 0.7rem;
-	}
-
-	&__social {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 3em;
-		height: 3em;
-		margin: 0 1em;
-		text-align: center;
+	.social-box {
 		border: 1px solid var(--white);
 		transition: box-shadow 0.2s ease-in-out;
 	}
 
-	&__social-link {
-		font-size: 1.2rem;
-		text-decoration: none;
+	.social-link {
 		color: var(--white);
 	}
 }
@@ -918,7 +925,7 @@ body {
 		align-items: center;
 		height: 100%;
 		width: 100%;
-		max-width: 1400px;
+		// max-width: 1400px;
 		padding: 7em 0 1.5em 0;
 		color: var(--black);
 		transform: translate(-50%, -50%);
@@ -936,18 +943,11 @@ body {
 		width: 100%;
 	}
 
-	// &__website {
-	// 	display: flex;
-	// 	// width: 100%;
-	// 	flex-direction: column;
-	// 	// align-items: center;
-	// 	justify-items: center;
-	// }
-
 	&__brand {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
+		padding-bottom: 0.5em;
 
 		.fa-mountain-sun {
 			font-size: 1.2rem;
@@ -956,7 +956,14 @@ body {
 
 	&__link {
 		display: none;
+		width: 120px;
 		padding: 0.5em;
+		// border-bottom: 1px solid transparent;
+	}
+
+	&__link:hover {
+		// border-bottom: 1px solid var(--black);
+		color: var(--gray);
 	}
 
 	&__title {
@@ -969,11 +976,23 @@ body {
 	}
 
 	&__creator {
-		color: var(--gray);
-		font-size: 0.8rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		&-socials {
+			display: none;
+			flex-direction: row;
+			padding-bottom: 2em;
+		}
+
+		&-text {
+			color: var(--gray);
+			font-size: 0.8rem;
+		}
 
 		&-link {
-			// color: var(--black);
+			color: var(--black);
 			font-weight: bold;
 			font-style: italic;
 			text-decoration: none;
@@ -983,6 +1002,16 @@ body {
 	&__text,
 	&__year {
 		font-size: 0.9rem;
+	}
+
+	.social-box {
+		border: 2px solid var(--black);
+	}
+
+	.social-link {
+		// font-size: 1.2rem;
+		// text-decoration: none;
+		color: var(--black);
 	}
 }
 
@@ -1001,7 +1030,7 @@ body {
 	}
 
 	.about-us {
-		&__social:hover {
+		.social-box:hover {
 			box-shadow: 6px 6px 0px 0px var(--light-green);
 			// border: 1px solid var(--light-green);
 			cursor: pointer;
@@ -1013,6 +1042,17 @@ body {
 			.contact__link-icon {
 				box-shadow: 5px 5px 0 0 var(--light-green);
 				border-color: var(--light-green);
+			}
+		}
+	}
+
+	.footer {
+		.social-box:hover {
+			border: 2px solid var(--pale-green);
+			cursor: pointer;
+
+			.social-link {
+				color: var(--pale-green);
 			}
 		}
 	}
@@ -1140,18 +1180,9 @@ body {
 	.about-us {
 		flex-direction: row;
 
-		&__socials-text {
+		&__social-text {
 			font-size: 1rem;
 		}
-
-		// &__social {
-		// 	width: 4em;
-		// 	height: 4em;
-		// }
-
-		// &__social-link {
-		// 	font-size: 1.4rem;
-		// }
 	}
 
 	.bikes {
@@ -1254,10 +1285,6 @@ body {
 	}
 
 	.footer {
-		&__content {
-			padding: 7em 4em 1.5em 4em;
-		}
-
 		&__container {
 			flex-direction: row;
 			justify-content: space-around;
@@ -1273,7 +1300,31 @@ body {
 
 		&__link {
 			display: block;
+			color: var(--black);
+			font-size: 0.8rem;
+			font-weight: 600;
+			text-decoration: none;
+			text-transform: uppercase;
 		}
+
+		&__creator {
+			&-socials {
+				display: flex;
+				flex-direction: row;
+				padding-bottom: 2em;
+			}
+
+			&-text {
+				font-size: 0.9rem;
+			}
+		}
+
+		// &__creator-link {
+		// 	// color: var(--black);
+		// 	font-weight: bold;
+		// 	font-style: italic;
+		// 	text-decoration: none;
+		// }
 	}
 }
 
@@ -1453,6 +1504,21 @@ body {
 	.bikes {
 		&__select {
 			width: 20%;
+		}
+	}
+
+	.footer {
+		&__brand {
+			padding-bottom: 2em;
+		}
+
+		&__title {
+			font-size: 1.6rem;
+		}
+
+		&__link {
+			width: 180px;
+			font-size:1rem;
 		}
 	}
 }
