@@ -39,6 +39,26 @@ body {
 		text-decoration: none;
 		font-size: 1.8rem;
 		transition: color 0.2s ease-in-out;
+		animation: logoAnimation 3s ease-in-out;
+		animation-iteration-count: 3;
+	}
+
+	@keyframes logoAnimation {
+		0% {
+			color: var(--green);
+		}
+		25% {
+			color: var(--light-green);
+		}
+		50% {
+			color: var(--green);
+		}
+		75% {
+			color: var(--light-green);
+		}
+		100% {
+			color: var(--green);
+		}
 	}
 
 	&__burger-btn {
@@ -181,10 +201,13 @@ body {
 }
 
 .section {
-	display: flex;
-	flex-direction: column;
 	padding-top: 7.7em;
-	color: var(--white);
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		color: var(--white);
+	}
 
 	&__title-box {
 		width: 60%;
@@ -219,6 +242,21 @@ body {
 		font-weight: 200;
 		font-size: 0.9rem;
 		line-height: 1.5em;
+	}
+
+	.active-fade-left {
+		animation: fadeLeftSection 1s ease-in-out;
+	}
+
+	@keyframes fadeLeftSection {
+		0% {
+			transform: translateX(-100px);
+			opacity: 0;
+		}
+		100% {
+			transform: translateX(0);
+			opacity: 1;
+		}
 	}
 }
 
@@ -530,10 +568,6 @@ body {
 			padding-top: 1em;
 		}
 
-		&-type {
-			padding: 1em;
-		}
-
 		&-name {
 			padding-bottom: 0.2em;
 			font-size: 1.3rem;
@@ -553,29 +587,29 @@ body {
 			}
 		}
 
-		&-type:hover {
-			cursor: pointer;
+		&-type {
+			padding: 1em;
 
 			.routes__cards-list--color {
-				animation: colorChange 0.2s ease-in-out forwards;
+				transition: color 0.2s ease-in-out;
 			}
 
 			li:nth-child(1) .routes__cards-list--color {
-				animation-delay: 0.2s;
+				transition-delay: 0.1;
 			}
 			li:nth-child(2) .routes__cards-list--color {
-				animation-delay: 0.3s;
+				transition-delay: 0.2s;
 			}
 			li:nth-child(3) .routes__cards-list--color {
-				animation-delay: 0.4s;
+				transition-delay: 0.3s;
 			}
 		}
 
-		@keyframes colorChange {
-			from {
-				color: var(--light-gray);
-			}
-			to {
+		&-type:hover,
+		.type-active {
+			cursor: pointer;
+
+			.routes__cards-list--color {
 				color: var(--light-green);
 			}
 		}
@@ -1178,7 +1212,9 @@ body {
 	}
 
 	.about-us {
-		flex-direction: row;
+		.section__container {
+			flex-direction: row;
+		}
 
 		&__social-text {
 			font-size: 1rem;
@@ -1518,7 +1554,7 @@ body {
 
 		&__link {
 			width: 180px;
-			font-size:1rem;
+			font-size: 1rem;
 		}
 	}
 }
