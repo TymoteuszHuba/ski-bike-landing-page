@@ -206,7 +206,14 @@ body {
 	&__container {
 		display: flex;
 		flex-direction: column;
+		position: relative;
+		height: 100%;
 		color: var(--white);
+		opacity: 0;
+	}
+
+	.section__container-active {
+		opacity: 1;
 	}
 
 	&__title-box {
@@ -244,7 +251,7 @@ body {
 		line-height: 1.5em;
 	}
 
-	.active-fade-left {
+	.fade-left-active {
 		animation: fadeLeftSection 1s ease-in-out;
 	}
 
@@ -1095,7 +1102,7 @@ body {
 @media (hover: none) {
 	// target devices that can't hover
 	.about-us {
-		&__social {
+		.social-box {
 			box-shadow: 6px 6px 0px 0px var(--light-green);
 		}
 	}

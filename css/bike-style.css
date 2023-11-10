@@ -196,7 +196,13 @@ body {
 .section__container {
   display: flex;
   flex-direction: column;
+  position: relative;
+  height: 100%;
   color: var(--white);
+  opacity: 0;
+}
+.section .section__container-active {
+  opacity: 1;
 }
 .section__title-box {
   width: 60%;
@@ -227,7 +233,7 @@ body {
   font-size: 0.9rem;
   line-height: 1.5em;
 }
-.section .active-fade-left {
+.section .fade-left-active {
   animation: fadeLeftSection 1s ease-in-out;
 }
 @keyframes fadeLeftSection {
@@ -905,7 +911,7 @@ body {
   }
 }
 @media (hover: none) {
-  .about-us__social {
+  .about-us .social-box {
     box-shadow: 6px 6px 0px 0px var(--light-green);
   }
   .contact__link-icon {

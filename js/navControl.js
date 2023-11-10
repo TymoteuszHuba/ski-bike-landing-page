@@ -4,6 +4,8 @@ const navItem = document.querySelectorAll('.nav__item');
 const sections = document.querySelectorAll('section');
 const routePathAnimation = document.querySelector('.routes--line-path');
 
+const sectionContainer = document.querySelectorAll('.section__container');
+
 const toggleBurgerMenu = () => {
 	navItems.classList.toggle('burger-menu--active');
 	burgerBtn.classList.toggle('burger-btn--active');
@@ -50,8 +52,39 @@ window.onscroll = () => {
 			});
 
 			if (section.id == 'routes') {
-				console.log('we are in routes!');
 				routePathAnimation.style.animation = 'dashAnimation 5s linear forwards';
+			}
+
+			if (section.classList.contains('about-us')) {
+				sectionContainer[0].classList.add(
+					'section__container-active',
+					'fade-left-active'
+				);
+			} else if (section.classList.contains('bikes')) {
+				sectionContainer[1].classList.add(
+					'section__container-active',
+					'fade-left-active'
+				);
+			} else if (section.classList.contains('routes')) {
+				sectionContainer[2].classList.add(
+					'section__container-active',
+					'fade-left-active'
+				);
+			} else if (section.classList.contains('service')) {
+				sectionContainer[3].classList.add(
+					'section__container-active',
+					'fade-left-active'
+				);
+			} else if (section.classList.contains('contact')) {
+				sectionContainer[4].classList.add(
+					'section__container-active',
+					'fade-left-active'
+				);
+			} else if (section.classList.contains('photos')) {
+				sectionContainer[5].classList.add(
+					'section__container-active',
+					'fade-left-active'
+				);
 			}
 		} else if (top <= 500) {
 			navItem[0].classList.remove('nav--active');
