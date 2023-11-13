@@ -33,7 +33,7 @@ burgerBtn.addEventListener('click', () => {
 window.onscroll = () => {
 	sections.forEach((section) => {
 		let top = window.scrollY;
-		let offset = section.offsetTop - 150;
+		let offset = section.offsetTop - 500;
 		let height = section.offsetHeight;
 		let id = section.getAttribute('id');
 
