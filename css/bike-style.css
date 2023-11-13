@@ -914,6 +914,12 @@ body {
   .about-us .social-box {
     box-shadow: 6px 6px 0px 0px var(--light-green);
   }
+  .service__carousel-btns {
+    justify-content: center;
+  }
+  .service__carousel-btn {
+    display: none;
+  }
   .contact__link-icon {
     box-shadow: 5px 5px 0 0 var(--light-green);
   }

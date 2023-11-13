@@ -7,6 +7,10 @@ let carouselCards = document.querySelectorAll('.service__carousel-card');
 let slideIndex = 1;
 showSlides(slideIndex);
 
+let touchStartX = 0;
+let touchEndX = 0;
+const serviceCarousel = document.querySelector('.service__carousel');
+
 function plusSlides(n) {
 	showSlides((slideIndex += n));
 }
@@ -35,6 +39,31 @@ function showSlides(n) {
 	squares[slideIndex - 1].className += ' square--active';
 }
 
+// touch start event handler
+function handleTouchStart(e) {
+	touchStartX = e.touches[0].clientX;
+}
+// touch end event handler
+function handleTouchMove(e) {
+	touchEndX = e.touches[0].clientX;
+}
+
+// Touch end event handler
+function handleTouchEnd() {
+	const touchDiff = touchStartX - touchEndX;
+
+	// adjust the sensivity 
+	if (touchDiff > 50) {
+		plusSlides(1);
+	} else if (touchDiff < -50) {
+		plusSlides(-1);
+	}
+}
+// add listeners
+serviceCarousel.addEventListener('touchstart', handleTouchStart, false);
+serviceCarousel.addEventListener('touchmove', handleTouchMove, false);
+serviceCarousel.addEventListener('touchend', handleTouchEnd, false);
+
 nextBtn.addEventListener('click', () => {
 	plusSlides(1);
 });
@@ -44,7 +73,7 @@ prevBtn.addEventListener('click', () => {
 });
 
 squares.forEach((square, index) => {
-    square.addEventListener('click', () => {
-        currentSlide(index + 1);
-    })
+	square.addEventListener('click', () => {
+		currentSlide(index + 1);
+	});
 });

@@ -1107,6 +1107,18 @@ body {
 		}
 	}
 
+	.service {
+		&__carousel {
+			&-btns {
+				justify-content: center;
+			}
+
+			&-btn {
+				display: none;
+			}
+		}
+	}
+
 	.contact {
 		&__link {
 			&-icon {
